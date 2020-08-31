@@ -1,5 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400&display=swap');
 
+:root {
+  --primary-color: #00b7ff;
+  --hover-button: #0586d1;
+}
+
 * {
   margin: 0;
   border: 0;
@@ -15,7 +20,7 @@
 }
 
 body {
-  background-color: #333;
+  background-image: url('images/bg.png');
   color: #fff;
 }
 
@@ -41,8 +46,17 @@ input {
 }
 
 button {
-  background-color: #00b7ff;
+  background-color: var(--primary-color);
   color: #fff;
+  transition: background-color 0.5s ease;
+}
+
+button:hover{
+  background-color: var(--hover-button);
+}
+
+button:active{
+  transform: translateY(2px);
 }
 
 #user-infos {
@@ -55,6 +69,7 @@ button {
 
 #user-infos img {
   width: 15%;
+  border: 8px solid var(--primary-color);
   border-radius: 50%;
 }
 
@@ -73,12 +88,12 @@ button {
 #repo {
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: space-between;
   padding: 2em;
   margin: 2em;
   background-color: #fff;
-  width: 300px;
-  height: 100px;
+  width: 350px;
+  height: 150px;
   border-radius: 0.5em;
 }
 
@@ -89,7 +104,7 @@ button {
 
 #repo a {
   text-decoration: none;
-  background-color: #00b7ff;
+  background-color: var(--primary-color);
   padding: 0.5em;
   width: max-content;
   border-radius: 0.5em;

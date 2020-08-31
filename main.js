@@ -10,7 +10,8 @@ $("#btn_get_repos").click(function () {
         const divRepos = $('#repo_list')
         const name = "<p>" + result[i].name + "</p>"
         const links = "<a href='" + result[i].html_url + "' target='_blank'>" + "Ir para o repositório" + "</a>"
-        const repo = '<div id="repo">' + name + links + '</div>'
+        const infos = "<a href='repo-infos.html' target='_blank' onclick='envia(" + JSON.stringify(result[i]) + ")'>" + "Detalhes" + "</a>"
+        const repo = '<div id="repo">' + name + links + infos + '</div>'
         divRepos.append(repo)
       }
       getFollowers(this.user)
@@ -24,6 +25,10 @@ $("#btn_get_repos").click(function () {
     }
   })
 })
+
+function envia(result) {
+  localStorage.result = JSON.stringify(result)
+}
 
 function clearRepos() {
   $('#repo_list').html('')
