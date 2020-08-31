@@ -18,9 +18,9 @@ $("#btn_get_repos").click(function () {
         .append(`<p id='user-name'>${result[0].owner.login}</p>`)
         .append(`<p id='repo_count'>${"Número total de repositórios: " + result.length}</p>`)
     },
-    error: function (msg) {
+    error: function (result, textStatus, msg) {
       clearRepos()
-      $('#repo_list').append(msg.status + ' ' + 'Page' + ' ' + msg.statusText)
+      $('#repo_list').append(msg)
     }
   })
 })
