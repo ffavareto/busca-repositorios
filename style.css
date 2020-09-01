@@ -1,8 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400&display=swap');
 
 :root {
-  --primary-color: #00b7ff;
-  --hover-button: #0586d1;
+  --primary-color: #2b2e28;
+  --hover-button: #181a1b;
 }
 
 * {
@@ -20,20 +20,38 @@
 }
 
 body {
-  background-image: url('images/bg.png');
   color: #fff;
+  position: relative;
+}
+
+body::after{
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0.9;
+  z-index: -1;
+  background-image: url('images/bg.png');
+}
+
+label, input, button {
+  margin-top: 0.5%;
 }
 
 header {
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-top: 0.5%;
 }
 
 label {
   font-size: 2.4rem;
   margin-right: 8px;
+  font-weight: 900;
 }
 
 button, input {
@@ -69,7 +87,7 @@ button:active{
 
 #user-infos img {
   width: 15%;
-  border: 8px solid var(--primary-color);
+  border: 8px solid #00ffff;
   border-radius: 50%;
 }
 
@@ -87,12 +105,11 @@ button:active{
 
 #repo {
   display: flex;
-  flex-direction: column;
   justify-content: space-between;
   padding: 2em;
   margin: 2em;
   background-color: #fff;
-  width: 350px;
+  width: 450px;
   height: 150px;
   border-radius: 0.5em;
 }
@@ -109,4 +126,16 @@ button:active{
   width: max-content;
   border-radius: 0.5em;
   color: #fff;
+}
+
+#repo :nth-child(1) {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+#repo :nth-child(2) {
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
