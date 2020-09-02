@@ -54,7 +54,7 @@ label {
   font-weight: 900;
 }
 
-button, input {
+#btn_get_repos, input {
   font-size: 2rem;
   padding: 0.5em 1em;
 }
@@ -63,17 +63,18 @@ input {
   width: 30%;
 }
 
-button {
+#btn_get_repos {
   background-color: var(--primary-color);
   color: #fff;
   transition: background-color 0.5s ease;
+  cursor: pointer;
 }
 
-button:hover{
+#btn_get_repos:hover{
   background-color: var(--hover-button);
 }
 
-button:active{
+#btn_get_repos:active{
   transform: translateY(2px);
 }
 
@@ -119,13 +120,15 @@ button:active{
   font-size: 1.6rem;
 }
 
-#repo a {
+#repo a, #btn-details {
   text-decoration: none;
   background-color: var(--primary-color);
   padding: 0.5em;
-  width: max-content;
+  width: 200px;
   border-radius: 0.5em;
   color: #fff;
+  font-size: 1.6em;
+  cursor: pointer;
 }
 
 #repo :nth-child(1) {
